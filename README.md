@@ -38,11 +38,11 @@ align with Islamic ethical standards.
 - Cancel Registration: Students can cancel via a confirmation modal, with instant feedback and page refresh upon confirmation.
 
 **Organizer Features**
-- Role-Based Login — Organisers log in via email and password
-- Dashboard — A centralised dashboard listing all created events 
-- Create Event — Organisers can publish new events by filling in the title, description, venue, date, category, and maximum slots.
-- Edit Event — Existing events can be updated 
-- Delete Event — Events can be removed with a confirmation prompt to prevent accidental deletions.
+- Role-Based Login: Organisers log in via email and password
+- Dashboard: A centralised dashboard listing all created events 
+- Create Event: Organisers can publish new events by filling in the title, description, venue, date, category, and maximum slots.
+- Edit Event: Existing events can be updated 
+- Delete Event: Events can be removed with a confirmation prompt to prevent accidental deletions.
 
 # Technical Implementation
 - Backend Framework: Laravel 11.x
@@ -53,14 +53,16 @@ align with Islamic ethical standards.
 - Development Environment: XAMPP
 
 **Database Design**
+
 The system is built on three core tables:
 
 - Users: Stores credentials, role, and profile details. The email field doubles as Matric ID for student accounts.
 - Events: Holds event details including title, venue, date, category, and max slots, linked to the creating organiser via a foreign key.
 - Registrations: A junction table managing the many-to-many relationship between users and events, recording each registration timestamp.
 
-##Entity Relationship Diagram (ERD)
-*The relationships indicate that one user (as an organizer) can create multiple events (one-to-many). Both users and events can participate in multiple registrations (one-to-many on both sides). This enables the system to manage event creation, user participation, and registration tracking seamlessly within a single integrated platform.*
+# Entity Relationship Diagram (ERD)
+
+**The relationships indicate that one user (as an organizer) can create multiple events (one-to-many). Both users and events can participate in multiple registrations (one-to-many on both sides). This enables the system to manage event creation, user participation, and registration tracking seamlessly within a single integrated platform.**
 
 IMAGEEEE
 

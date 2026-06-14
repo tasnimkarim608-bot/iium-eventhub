@@ -240,39 +240,39 @@ The following test cases were executed and passed successfully:
 - View registrations displays registered student names and emails
 - Logout redirects to role selection page
 
-**Browser Compatibility**
-Google Chrome (Latest) - Fully compatible
-Mozilla Firefox (Latest) - Fully compatible
-Microsoft Edge (Latest) - Fully compatible
+**Browser Compatibility**  
+Google Chrome (Latest) - Fully compatible    
+Mozilla Firefox (Latest) - Fully compatible  
+Microsoft Edge (Latest) - Fully compatible  
 
-**Performance Testing**
-Page load times under 2 seconds for all pages
-AJAX requests for registration and cancellation complete within 500ms
-Database queries optimized using Eloquent relationships with eager loading
-Modal popups render instantly on button click
-Notifications appear immediately with smooth fade-out animation
+**Performance Testing**  
+Page load times under 2 seconds for all pages  
+AJAX requests for registration and cancellation complete within 500ms  
+Database queries optimized using Eloquent relationships with eager loading  
+Modal popups render instantly on button click  
+Notifications appear immediately with smooth fade-out animation  
 
 # Challenges Faced and Solutions
 
-Challenge 1: Accepting Matric ID as Email Field
-Problem: Laravel's default authentication expects an email address format. Students needed to log in using Matric ID (numbers only).
+Challenge 1: Accepting Matric ID as Email Field 
+Problem: Laravel's default authentication expects an email address format. Students needed to log in using Matric ID (numbers only). 
 Solution: Modified the LoginRequest.php to remove email validation and accept numeric values in the email field. The rules method was changed from requiring email format to simply requiring a string. The system then stores the Matric ID in the email column for student users while organizers use actual email addresses.
 
-Challenge 2: Auto-Creating Accounts on First Login
-Problem: Users should not need to fill a separate registration form. They should be able to log in immediately with any credentials.
-Solution: Implemented auto-account creation logic in LoginRequest.php authenticate method. When a user attempts to log in, the system first searches for an existing user. If no user is found, it automatically creates a new user account with the provided credentials and the selected role (student or organiser), then logs them in. This eliminated the need for a separate registration page.
+Challenge 2: Auto-Creating Accounts on First Login 
+Problem: Users should not need to fill a separate registration form. They should be able to log in immediately with any credentials. 
+Solution: Implemented auto-account creation logic in LoginRequest.php authenticate method. When a user attempts to log in, the system first searches for an existing user. If no user is found, it automatically creates a new user account with the provided credentials and the selected role (student or organiser), then logs them in. This eliminated the need for a separate registration page. 
 
-Challenge 3: AJAX Popup Registration with Auto-Hide Notifications
-Problem: Registration needed to happen without page refresh, with a modal popup for collecting additional information (Kulliyah, Year) and auto-hide notifications for user feedback.
-Solution: Implemented JavaScript fetch API to send POST requests to the server. The register method in EventController was modified to return JSON responses instead of redirects. Created modal popup using CSS positioned elements with z-index. Notifications are dynamically created DOM elements that are removed after setTimeout() of 3 seconds, creating a smooth user experience.
+Challenge 3: AJAX Popup Registration with Auto-Hide Notifications 
+Problem: Registration needed to happen without page refresh, with a modal popup for collecting additional information (Kulliyah, Year) and auto-hide notifications for user feedback. 
+Solution: Implemented JavaScript fetch API to send POST requests to the server. The register method in EventController was modified to return JSON responses instead of redirects. Created modal popup using CSS positioned elements with z-index. Notifications are dynamically created DOM elements that are removed after setTimeout() of 3 seconds, creating a smooth user experience.  
 
-Challenge 4: Role-Based Navigation Menu
-Problem: Students and organizers needed to see completely different menu items. Organizers should not see Events or My Registrations, while students should not see My Events.
-Solution: Used Blade conditional statements in navigation.blade.php to check Auth::user()->role. The navigation links section now displays different content based on the logged-in user's role. The logo link also redirects to different dashboards depending on role. Both desktop and mobile responsive menus were updated accordingly.
+Challenge 4: Role-Based Navigation Menu 
+Problem: Students and organizers needed to see completely different menu items. Organizers should not see Events or My Registrations, while students should not see My Events. 
+Solution: Used Blade conditional statements in navigation.blade.php to check Auth::user()->role. The navigation links section now displays different content based on the logged-in user's role. The logo link also redirects to different dashboards depending on role. Both desktop and mobile responsive menus were updated accordingly. 
 
-# Future Enhancements
+# Future Enhancements 
 
-- Real-time Notifications: Push notifications for event reminders and updates
+- Real-time Notifications: Push notifications for event reminders and updates 
 - Categories Filter: Allow students to filter events by category (Sports, Talk, Religious, Technology)
 - Event Images: Allow organizers to upload event banners and images
 - Email Confirmation: Send email confirmations upon registration and cancellation
@@ -309,9 +309,9 @@ Solution: Used Blade conditional statements in navigation.blade.php to check Aut
 **Project Impact**
 This project provides practical experience in building real-world web applications using Laravel framework. The skills gained through this project are directly applicable to professional web development scenarios. The system successfully demonstrates how event management on campus can be centralized and streamlined using modern web technologies.
 
-Project Completion Date: 14/6/2026
-Course: BIIT 2305 Web Application Development
-Section: 4
+Project Completion Date: 14/6/2026  
+Course: BIIT 2305 Web Application Development  
+Section: 4  
 
 # References
 Laravel Documentation. (2024). Laravel 11.x Documentation. Retrieved from https://laravel.com/docs/11.x

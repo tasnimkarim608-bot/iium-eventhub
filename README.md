@@ -112,14 +112,14 @@ EventController.php - The main controller handling both student and organizer op
 
 **Models and Relationships**
 
-*User Model*
-php
-public function events() {
-    return $this->hasMany(Event::class, 'organiser_id');
-}
-public function registrations() {
-    return $this->hasMany(Registration::class);
-}
+*User Model* 
+php 
+public function events() { 
+    return $this->hasMany(Event::class, 'organiser_id'); 
+} 
+public function registrations() { 
+    return $this->hasMany(Registration::class); 
+} 
 
 *Event Model*
 php

@@ -1,4 +1,4 @@
-##Group Information
+# Group Information
 Group Name: WebWizards
 Section: 4
 
@@ -7,11 +7,11 @@ Section: 4
 2. Tasnim Karim - 2417966
 3. Aribah Abdul Rahman - 2417210
 
-##Project Overview
+# Project Overview
 
 **IIUM EventHub** is a web-based event management platform built with the Laravel framework. It bridges the gap between event organizers and students at IIUM, enabling organizers to publish and manage campus events while students can discover, register, and keep track of their participation, all in one centralized system.
 
-##Project Objectives
+# Project Objectives
 • To design and develop a Laravel-based event management web application tailored for 
 the IIUM campus community. 
 • To establish a role-based access control system comprising two distinct user types: 
@@ -23,11 +23,11 @@ participation, and withdraw registrations when necessary.
 • To uphold Shariah-compliance by ensuring all event content and system operations 
 align with Islamic ethical standards.
 
-##Target Users
+**Target Users**
 - Students: Individuals looking to discover and register for campus events. Students can browse events, register for events, and manage their registrations.
 - Organizers: Student clubs, societies, and university department representatives who want to manage events digitally. Organizers can create, edit and delete events
 
-##Features and Functionalities
+# Features and Functionalities
 
 **Student Features**
 - Role-Based Login: Students log in via Matric ID and password; no separate registration needed.
@@ -44,7 +44,7 @@ align with Islamic ethical standards.
 - Edit Event — Existing events can be updated 
 - Delete Event — Events can be removed with a confirmation prompt to prevent accidental deletions.
 
-##Technical Implementation
+# Technical Implementation
 - Backend Framework: Laravel 11.x
 - Frontend: Blade Templates with Tailwind CSS
 - Database: SQLite (Development) / MySQL (Production)
@@ -64,7 +64,7 @@ The system is built on three core tables:
 
 IMAGEEEE
 
-##Laravel Components Implementation
+# Laravel Components Implementation
 Routes (web.php)
 
 The routes file defines all application URLs and their corresponding controller methods:
@@ -153,10 +153,10 @@ public function event() {
 - organizer/registrations.blade.php: List of registered students
 - layouts/navigation.blade.php: Navigation menu with role-based links
 
-##Design & UI
+# Design & UI
 The interface features a clean, branded look with logo assets displayed in the navigation bar and a dark-overlay background image on the login and role selection pages for readability. A consistent color scheme distinguishes user roles teal (#00A19D) for Student actions and yellow-gold (#FFD100) for Organiser actions. Modal popups handle registration and cancellation confirmations, while auto-dismissing toast notifications appear in the top-right corner using setTimeout(). The layout is fully responsive, built with the Tailwind CSS grid system.
 
-##User Authentication System
+# User Authentication System
 - Role Selection: Users choose between Student or Organiser login before proceeding.
 - Student Login: Authenticated via Matric ID; account auto-created on first login.
 - Organiser Login: Authenticated via email; account auto-created on first login.
@@ -164,7 +164,7 @@ The interface features a clean, branded look with logo assets displayed in the n
 - Role-Based Redirection: Students land on the Events page; Organisers land on their Dashboard.
 - Logout: Available via top-right dropdown, redirecting back to the role selection page.
 
-##Security Measures
+# Security Measures
 - Password encryption using Laravel's built-in bcrypt hashing
 - CSRF protection on all forms using @csrf directive
 - Input validation on event creation and editing
@@ -172,7 +172,7 @@ The interface features a clean, branded look with logo assets displayed in the n
 - Authorization checks ensuring organizers can only edit and delete their own events using where('organiser_id', auth()->id())
 - SQL injection prevention through Laravel's Eloquent ORM
 
-##Installation and Setup Instructions
+# Installation and Setup Instructions
 
 **Prerequisites**
 PHP >= 8.1
@@ -247,7 +247,7 @@ Database queries optimized using Eloquent relationships with eager loading
 Modal popups render instantly on button click
 Notifications appear immediately with smooth fade-out animation
 
-##Challenges Faced and Solutions
+# Challenges Faced and Solutions
 
 Challenge 1: Accepting Matric ID as Email Field
 Problem: Laravel's default authentication expects an email address format. Students needed to log in using Matric ID (numbers only).
@@ -265,7 +265,7 @@ Challenge 4: Role-Based Navigation Menu
 Problem: Students and organizers needed to see completely different menu items. Organizers should not see Events or My Registrations, while students should not see My Events.
 Solution: Used Blade conditional statements in navigation.blade.php to check Auth::user()->role. The navigation links section now displays different content based on the logged-in user's role. The logo link also redirects to different dashboards depending on role. Both desktop and mobile responsive menus were updated accordingly.
 
-##Future Enhancements
+# Future Enhancements
 
 - Real-time Notifications: Push notifications for event reminders and updates
 - Categories Filter: Allow students to filter events by category (Sports, Talk, Religious, Technology)
@@ -279,7 +279,7 @@ Solution: Used Blade conditional statements in navigation.blade.php to check Aut
 - Caching implementation for improved performance using Redis or Memcached
 - API development for potential mobile app integration
 
-##Learning Outcomes
+# Learning Outcomes
 
 **Technical Skills Gained**
 1. Laravel Framework: Understanding of MVC architecture, Eloquent ORM, Blade templating, and Artisan commands

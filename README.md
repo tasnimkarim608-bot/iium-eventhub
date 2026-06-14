@@ -114,39 +114,37 @@ EventController.php - The main controller handling both student and organizer op
 
 *User Model*  
 php  
-public function events() { 
-    return $this->hasMany(Event::class, 'organiser_id'); 
-} 
-public function registrations() { 
-    return $this->hasMany(Registration::class); 
-} 
+public function events() {     
+    return $this->hasMany(Event::class, 'organiser_id');    
+}    
+public function registrations() {    
+    return $this->hasMany(Registration::class);    
+}    
 
-*Event Model*
-php
-protected $fillable = ['organiser_id', 'title', 'description', 'venue', 'event_date', 'category', 'max_slots'];
+*Event Model*    
+php    
+protected $fillable = ['organiser_id', 'title', 'description', 'venue', 'event_date', 'category', 'max_slots'];  
 
-public function organiser() {
-    return $this->belongsTo(User::class, 'organiser_id');
-}
-public function registrations() {
-    return $this->hasMany(Registration::class);
-}
+public function organiser() {   
+    return $this->belongsTo(User::class, 'organiser_id');   
+}   
+public function registrations() {    
+    return $this->hasMany(Registration::class);   
+}   
 
-*Registration Model*
+*Registration Model*    
+php    
+protected $fillable = ['user_id', 'event_id', 'registered_at'];   
 
-php
+public function user() {   
+    return $this->belongsTo(User::class);   
+}   
+public function event() {   
+    return $this->belongsTo(Event::class);   
+}    
 
-protected $fillable = ['user_id', 'event_id', 'registered_at'];
-
-public function user() {
-    return $this->belongsTo(User::class);
-}
-public function event() {
-    return $this->belongsTo(Event::class);
-}
-
-*Views and User Interface*
-**Blade templates structure in resources/views directory:**
+*Views and User Interface*     
+**Blade templates structure in resources/views directory:**   
 
 - role-select.blade.php: Role selection page with Student and Organizer buttons, custom background image, and logo images
 - auth/student-login.blade.php: Student login form accepting Matric ID

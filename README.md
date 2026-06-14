@@ -64,7 +64,7 @@ The system is built on three core tables:
 
 **The relationships indicate that one user (as an organizer) can create multiple events (one-to-many). Both users and events can participate in multiple registrations (one-to-many on both sides). This enables the system to manage event creation, user participation, and registration tracking seamlessly within a single integrated platform.**
 
-IMAGEEEE
+![ERD Diagram](erd.png)
 
 # Laravel Components Implementation
 Routes (web.php)

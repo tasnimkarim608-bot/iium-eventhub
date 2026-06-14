@@ -179,48 +179,48 @@ The interface features a clean, branded look with logo assets displayed in the n
 
 # Installation and Setup Instructions
 
-**Prerequisites**
-PHP >= 8.1
-Composer
-Node.js and NPM
-XAMPP (or any local server with PHP and MySQL)
-Git
+**Prerequisites** 
+PHP >= 8.1 
+Composer 
+Node.js and NPM  
+XAMPP (or any local server with PHP and MySQL) 
+Git 
 
-**Step-by-Step Installation**
+**Step-by-Step Installation** 
 
-1. Create New Laravel Project
-bash
-composer create-project laravel/laravel iium-eventhub
-cd iium-eventhub
+1. Create New Laravel Project  
+bash  
+composer create-project laravel/laravel iium-eventhub   
+cd iium-eventhub  
 
-2. Install Breeze Authentication
-bash
-composer require laravel/breeze --dev
-php artisan breeze:install blade
-npm install
-npm run build
+2. Install Breeze Authentication  
+bash  
+composer require laravel/breeze --dev   
+php artisan breeze:install blade  
+npm install  
+npm run build  
 
-3. Environment Configuration
-Configure database in .env file:
-For SQLite: Set DB_CONNECTION=sqlite and create database/database.sqlite file
-For MySQL: Set DB_CONNECTION=mysql with your database credentials
+3. Environment Configuration  
+Configure database in .env file:  
+For SQLite: Set DB_CONNECTION=sqlite and create database/database.sqlite file  
+For MySQL: Set DB_CONNECTION=mysql with your database credentials  
 
-4. Run Migrations
-bash
-php artisan migrate
+4. Run Migrations   
+bash  
+php artisan migrate  
 
-5. Copy Custom Images
-Place Logo.png and Textlogo.png in public/images/ directory
-Place background image (bg.png) in public/images/ directory
+5. Copy Custom Images  
+Place Logo.png and Textlogo.png in public/images/ directory  
+Place background image (bg.png) in public/images/ directory  
 
-6. Start Development Server
-bash
-php artisan serve
+6. Start Development Server  
+bash   
+php artisan serve  
 
-7. Access the Application
-Open browser and navigate to http://127.0.0.1:8000
-Testing and Quality Assurance
-Functionality Testing
+7. Access the Application  
+Open browser and navigate to http://127.0.0.1:8000  
+Testing and Quality Assurance  
+Functionality Testing  
 
 The following test cases were executed and passed successfully:
 - Role selection page displays correctly with both Student and Organizer buttons

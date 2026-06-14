@@ -314,12 +314,12 @@ Course: BIIT 2305 Web Application Development
 Section: 4  
 
 # References
-Laravel Documentation. (2024). Laravel 11.x Documentation. Retrieved from https://laravel.com/docs/11.x
-Tailwind CSS Documentation. (2024). Tailwind CSS v3 Documentation. Retrieved from https://tailwindcss.com/docs
-MDN Web Docs. (2024). Web Development Resources. Retrieved from https://developer.mozilla.org/
-Stack Overflow. (2024). Programming Q&A Platform. Retrieved from https://stackoverflow.com/
-Figma Community. (2024). Event Management System Design Templates. Retrieved from https://www.figma.com/community
-PHP Documentation. (2024). PHP Manual - PHP 8.1. Retrieved from https://www.php.net/docs.php
+Laravel Documentation. (2024). Laravel 11.x Documentation. Retrieved from https://laravel.com/docs/11.x 
+Tailwind CSS Documentation. (2024). Tailwind CSS v3 Documentation. Retrieved from https://tailwindcss.com/docs 
+MDN Web Docs. (2024). Web Development Resources. Retrieved from https://developer.mozilla.org/ 
+Stack Overflow. (2024). Programming Q&A Platform. Retrieved from https://stackoverflow.com/ 
+Figma Community. (2024). Event Management System Design Templates. Retrieved from https://www.figma.com/community 
+PHP Documentation. (2024). PHP Manual - PHP 8.1. Retrieved from https://www.php.net/docs.php 
 
 # Conclusion
 

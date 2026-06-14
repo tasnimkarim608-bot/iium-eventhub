@@ -71,30 +71,33 @@ Routes (web.php)
 
 The routes file defines all application URLs and their corresponding controller methods:
 
-php
+php  
 // Role selection and authentication
-Route::get('/', function () { return view('role-select'); });
-Route::get('/login/student', function () { return view('auth.student-login'); })->name('student.login');
-Route::get('/login/organizer', function () { return view('auth.organizer-login'); })->name('organizer.login');
+
+Route::get('/', function () { return view('role-select'); });   
+Route::get('/login/student', function () { return view('auth.student-login'); })->name('student.login');   
+Route::get('/login/organizer', function () { return view('auth.organizer-login'); })->name('organizer.login');    
 
 // Student routes
-Route::get('/events', [EventController::class, 'index'])->middleware(['auth'])->name('events');
-Route::post('/events/register/{id}', [EventController::class, 'register'])->middleware(['auth'])->name('events.register');
-Route::delete('/events/cancel/{id}', [EventController::class, 'cancel'])->middleware(['auth'])->name('events.cancel');
-Route::get('/my-registrations', function () { ... })->middleware(['auth'])->name('my-registrations');
+
+Route::get('/events', [EventController::class, 'index'])->middleware(['auth'])->name('events');   
+Route::post('/events/register/{id}', [EventController::class, 'register'])->middleware(['auth'])->name('events.register'); 
+Route::delete('/events/cancel/{id}', [EventController::class, 'cancel'])->middleware(['auth'])->name('events.cancel'); 
+Route::get('/my-registrations', function () { ... })->middleware(['auth'])->name('my-registrations'); 
 
 // Organizer routes
-Route::middleware(['auth'])->group(function () {
-    Route::get('/organizer/dashboard', [EventController::class, 'organizerDashboard'])->name('organizer.dashboard');
-    Route::get('/organizer/events/create', [EventController::class, 'create'])->name('organizer.events.create');
-    Route::post('/organizer/events', [EventController::class, 'store'])->name('organizer.events.store');
-    Route::get('/organizer/events/{id}/edit', [EventController::class, 'edit'])->name('organizer.events.edit');
-    Route::put('/organizer/events/{id}', [EventController::class, 'update'])->name('organizer.events.update');
-    Route::delete('/organizer/events/{id}', [EventController::class, 'destroy'])->name('organizer.events.destroy');
-    Route::get('/organizer/events/{id}/registrations', [EventController::class, 'viewRegistrations'])->name('organizer.events.registrations');
-});
 
-**Controllers**
+Route::middleware(['auth'])->group(function () { 
+    Route::get('/organizer/dashboard', [EventController::class, 'organizerDashboard'])->name('organizer.dashboard'); 
+    Route::get('/organizer/events/create', [EventController::class, 'create'])->name('organizer.events.create'); 
+    Route::post('/organizer/events', [EventController::class, 'store'])->name('organizer.events.store'); 
+    Route::get('/organizer/events/{id}/edit', [EventController::class, 'edit'])->name('organizer.events.edit'); 
+    Route::put('/organizer/events/{id}', [EventController::class, 'update'])->name('organizer.events.update'); 
+    Route::delete('/organizer/events/{id}', [EventController::class, 'destroy'])->name('organizer.events.destroy'); 
+    Route::get('/organizer/events/{id}/registrations', [EventController::class, 'viewRegistrations'])->name('organizer.events.registrations'); 
+}); 
+
+**Controllers**  
 EventController.php - The main controller handling both student and organizer operations with the following key methods:
 - index(): Displays all events for students to browse
 - register($id): Processes event registration and returns JSON response for AJAX
